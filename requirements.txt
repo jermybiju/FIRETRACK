@@ -1,0 +1,5 @@
+# FIRETRACK runtime dependencies (Python 3.10+)
+# The scientific engine itself uses only the standard library; FastAPI provides
+# the HTTP layer and uvicorn runs it.
+fastapi==0.115.6
+uvicorn==0.32.1

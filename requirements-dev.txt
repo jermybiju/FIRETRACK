@@ -1,0 +1,3 @@
+# Extra packages needed to run the HTTP API tests (Starlette's test client).
+-r requirements.txt
+httpx==0.27.2

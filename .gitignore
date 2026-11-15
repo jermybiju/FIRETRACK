@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pydeps/
+.pytest_cache/
+
+# Secrets — never commit a FIRMS MAP_KEY
+.env
+
+# Build and dependency folders
+frontend/node_modules/
+frontend/.vite/
+.browser-profile*/
+.tmp/
+
+# Generated databases and exports (rebuilt automatically on first run)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/_test/
+data/exports/
+data/raw/api/
+
+# OS noise
+Thumbs.db
+.DS_Store
+
+# Additional sensitive and local files
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+*.bak
+backups/
+**/backups/
+**/_test/
+
+# Frontend build output
+frontend/dist/
+frontend/build/
+
+# Logs and local caches
+*.log
+.cache/
+.pycache/
