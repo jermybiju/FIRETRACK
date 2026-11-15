@@ -22,6 +22,8 @@ export interface QueryBody {
   sensors?: string[] | null;
 }
 
+const API_BASE = "https://firetrack-tnsw.onrender.com";
+
 async function request<T>(path: string, body?: unknown): Promise<T> {
   const init: RequestInit = body
     ? {
@@ -32,7 +34,7 @@ async function request<T>(path: string, body?: unknown): Promise<T> {
     : { method: "GET" };
   let response: Response;
   try {
-    response = await fetch(path, init);
+    response = await fetch(`${API_BASE}${path}`, init);
   } catch {
     throw new ApiError("Cannot reach the FIRETRACK server. Is it still running?", 0);
   }
@@ -75,7 +77,7 @@ export const api = {
 
   /** Upload a NASA FIRMS Archive Download file (.csv, .csv.gz or .zip). */
   uploadArchive: async (file: File) => {
-    const response = await fetch(`/api/ingest/archive?name=${encodeURIComponent(file.name)}`, {
+    const response = await fetch(`${API_BASE}/api/ingest/archive?name=${encodeURIComponent(file.name)}`, {
       method: "POST",
       headers: { "Content-Type": "application/octet-stream" },
       body: file,
@@ -111,7 +113,7 @@ export async function downloadExport(
   body: unknown,
   filename: string,
 ): Promise<void> {
-  const response = await fetch(path, {
+  const response = await fetch(`${API_BASE}${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
@@ -129,3 +131,5 @@ export async function downloadExport(
   link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 4000);
 }
+
+
