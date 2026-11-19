@@ -1,8 +1,6 @@
 # FIRETRACK
  **Live Demo:** https://jermybiju.github.io/FIRETRACK/
 
-> **Independent audit notice (2026-11-15):** FIRETRACK currently treats global product date availability and successful area-query windows as proof that a sensor observed the selected AOI. A successful empty FIRMS hotspot query does not establish local satellite coverage or cloud-free observation. As a result, zero-activity days, coverage-normalised values, calibration, historical completeness, trends and anomaly results are **not validated for the selected area**. Do not present those metrics as scientific findings until area-specific observation/coverage evidence is integrated and the analytics are updated.
-
 **Unified Satellite Burning Activity Intelligence Platform**
 
 > Two satellite perspectives. One consistent history of burning activity.
